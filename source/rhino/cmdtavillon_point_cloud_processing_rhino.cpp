@@ -59,6 +59,36 @@ public:
 // Do NOT create any other instance of a CCommandtavillon_point_cloud_processing_rhino class.
 static class CCommandtavillon_point_cloud_processing_rhino thetavillon_point_cloud_processing_rhinoCommand;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Convert Input to CGAL PointCloud
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel2;
+//typedef Kernel2::Point_3 Point2;
+//typedef Kernel2::Vector_3 Vector2;
+
+void rhinocloud_to_cgalcloud(ON_PointCloud* rhinocloud) {
+	//	CGAL::Point_set_3<Kernel2::Point_3, Kernel2::Vector_3> points;
+	//	points.resize(rhinocloud->m_P.Count());
+
+	for (int i = 0; i < rhinocloud->m_P.Count(); i++) {
+		auto& p = rhinocloud->m_P[i];
+
+		//		points.insert(
+//			Kernel2::Point_3(p[3 * i + 0], p[3 * i + 1], p[3 * i + 2]),
+//			Kernel2::Vector_3(n[3 * i + 0], n[3 * i + 1], n[3 * i + 2])
+//		);
+
+		if (rhinocloud->HasPointColors()) {
+			//new_cloud.m_C.Append(cloudCopy->m_C[i]);
+		}
+
+		if (rhinocloud->HasPointNormals()) {
+			//new_cloud.m_N.Append(cloudCopy->m_N[i]);
+		}
+	}
+}
+
 CRhinoCommand::result CCommandtavillon_point_cloud_processing_rhino::RunCommand(const CRhinoCommandContext& context)
 {
 	///////////////////////////////////////////////////////////////////////////////////
