@@ -64,17 +64,10 @@ CRhinoCommand::result CCommandtavillon_point_cloud_processing_rhino::RunCommand(
 	///////////////////////////////////////////////////////////////////////////////////
 	  // Get PointCloud/obj from Rhino
 	  ///////////////////////////////////////////////////////////////////////////////////
-	CRhinoGetObject go, box;
-	// pcd
+	CRhinoGetObject go;
 	go.SetCommandPrompt(L"Select point clouds");
 	go.SetGeometryFilter(CRhinoGetObject::pointset_object);
 	go.GetObjects(1, 0);
-	// bbox
-	//box.SetCommandPrompt(L"Select a Box");
-	//box.SetGeometryFilter(CRhinoGetObject::polysrf_object); // <-- best obj for boundingBox?
-	//box.GetObjects(1, 1);
-
-	//const ON_Brep* brep = box.Object(0).Brep();
 
 	if (go.CommandResult() == CRhinoCommand::success)
 	{
@@ -89,30 +82,30 @@ CRhinoCommand::result CCommandtavillon_point_cloud_processing_rhino::RunCommand(
 			if (cloud_obj)
 			{
 				////////////////////////////////////////////////////////////////
-				// Get PointCloud plane and transform to xy
+				//Example Get PointCloud plane and duplicate it
 				////////////////////////////////////////////////////////////////
 				const ON_PointCloud* cloud = ON_PointCloud::Cast(cloud_obj->Geometry());
 				ON_PointCloud* cloudCopy = cloud->Duplicate();
 
 				////////////////////////////////////////////////////////////////
-				// Create two pointcloud for inside and outside
+				//Example Iterate PointCloud
 				////////////////////////////////////////////////////////////////
-				ON_PointCloud outside;
+				ON_PointCloud new_cloud;
 
 				for (int i = 0; i < cloudCopy->m_P.Count(); i++) {
 					auto& p = cloudCopy->m_P[i];
 
-					outside.m_P.Append(p);
+					new_cloud.m_P.Append(p);
 
 					if (cloudCopy->HasPointColors())
-						outside.m_C.Append(cloudCopy->m_C[i]);
+						new_cloud.m_C.Append(cloudCopy->m_C[i]);
 
 					if (cloudCopy->HasPointNormals())
-						outside.m_N.Append(cloudCopy->m_N[i]);
+						new_cloud.m_N.Append(cloudCopy->m_N[i]);
 				}
 
 				////////////////////////////////////////////////////////////////
-				// Bake
+				//Example Bake
 				////////////////////////////////////////////////////////////////
 				//CRhinoPointCloudObject* cloudNew_objOutside(new CRhinoPointCloudObject());
 				//cloudNew_objOutside->SetPointCloud(outside);
