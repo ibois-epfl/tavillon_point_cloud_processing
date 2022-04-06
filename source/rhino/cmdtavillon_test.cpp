@@ -1,43 +1,15 @@
-// cmdtavillon_point_cloud_processing_rhino.cpp : command file
-//
-
 #include "StdAfx.h"
-#include "tavillon_point_cloud_processing_rhinoPlugIn.h"
+#include "tavillon_rhinoPlugIn.h"
 
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-//
-// BEGIN tavillon_point_cloud_processing_rhino command
-//
+#pragma region tavillon_rhino command
 
-#pragma region tavillon_point_cloud_processing_rhino command
-
-// Do NOT put the definition of class CCommandtavillon_point_cloud_processing_rhino in a header
-// file. There is only ONE instance of a CCommandtavillon_point_cloud_processing_rhino class
-// and that instance is the static thetavillon_point_cloud_processing_rhinoCommand that appears
-// immediately below the class definition.
-
-class CCommandtavillon_point_cloud_processing_rhino : public CRhinoCommand
+class CCommandtavillon_rhino : public CRhinoCommand
 {
 public:
-	// The one and only instance of CCommandtavillon_point_cloud_processing_rhino is created below.
-	// No copy constructor or operator= is required.
-	// Values of member variables persist for the duration of the application.
+	CCommandtavillon_rhino() = default;
 
-	// CCommandtavillon_point_cloud_processing_rhino::CCommandtavillon_point_cloud_processing_rhino()
-	// is called exactly once when static thetavillon_point_cloud_processing_rhinoCommand is created.
-	CCommandtavillon_point_cloud_processing_rhino() = default;
+	~CCommandtavillon_rhino() = default;
 
-	// CCommandtavillon_point_cloud_processing_rhino::~CCommandtavillon_point_cloud_processing_rhino()
-	// is called exactly once when static thetavillon_point_cloud_processing_rhinoCommand is destroyed.
-	// The destructor should not make any calls to the Rhino SDK.
-	// If your command has persistent settings, then override
-	// CRhinoCommand::SaveProfile and CRhinoCommand::LoadProfile.
-	~CCommandtavillon_point_cloud_processing_rhino() = default;
-
-	// Returns a unique UUID for this command.
-	// If you try to use an id that is already being used, then
-	// your command will not work. Use GUIDGEN.EXE to make unique UUID.
 	UUID CommandUUID() override
 	{
 		// {675B2686-1793-4EC4-8216-D92745BBA48D}
@@ -46,18 +18,11 @@ public:
 		return tavillon_point_cloud_processing_rhinoCommand_UUID;
 	}
 
-	// Returns the English command name.
-	// If you want to provide a localized command name, then override
-	// CRhinoCommand::LocalCommandName.
 	const wchar_t* EnglishCommandName() override { return L"tavillon_get_pointclouds"; }
-
-	// Rhino calls RunCommand to run the command.
 	CRhinoCommand::result RunCommand(const CRhinoCommandContext& context) override;
 };
 
-// The one and only CCommandtavillon_point_cloud_processing_rhino object
-// Do NOT create any other instance of a CCommandtavillon_point_cloud_processing_rhino class.
-static class CCommandtavillon_point_cloud_processing_rhino thetavillon_point_cloud_processing_rhinoCommand;
+static class CCommandtavillon_rhino thetavillon_rhinoCommand;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Convert Input to CGAL PointCloud
@@ -89,7 +54,7 @@ void rhinocloud_to_cgalcloud(ON_PointCloud* rhinocloud) {
 	}
 }
 
-CRhinoCommand::result CCommandtavillon_point_cloud_processing_rhino::RunCommand(const CRhinoCommandContext& context)
+CRhinoCommand::result CCommandtavillon_rhino::RunCommand(const CRhinoCommandContext& context)
 {
 	///////////////////////////////////////////////////////////////////////////////////
 	  // Get PointCloud/obj from Rhino
