@@ -1,14 +1,25 @@
 #include "StdAfx.h"
 #include "tavillon_rhinoPlugIn.h"
 
-#pragma region tavillon_rhino command
+#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+#include <CGAL/Point_set_3.h>
+#include <CGAL/draw_point_set_3.h>
 
-class CCommandtavillon_rhino : public CRhinoCommand
+#include <fstream>
+typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
+typedef Kernel::FT FT;
+typedef Kernel::Point_3 Point;
+typedef Kernel::Vector_3 Vector;
+typedef CGAL::Point_set_3<Point> Point_set;
+
+#pragma region tavillon_testcommand
+
+class CCommandtavillon_test : public CRhinoCommand
 {
 public:
-	CCommandtavillon_rhino() = default;
+	CCommandtavillon_test() = default;
 
-	~CCommandtavillon_rhino() = default;
+	~CCommandtavillon_test() = default;
 
 	UUID CommandUUID() override
 	{
@@ -18,11 +29,11 @@ public:
 		return tavillon_point_cloud_processing_rhinoCommand_UUID;
 	}
 
-	const wchar_t* EnglishCommandName() override { return L"tavillon_get_pointclouds"; }
+	const wchar_t* EnglishCommandName() override { return L"tavillon_test"; }
 	CRhinoCommand::result RunCommand(const CRhinoCommandContext& context) override;
 };
 
-static class CCommandtavillon_rhino thetavillon_rhinoCommand;
+static class CCommandtavillon_test thetavillon_rhinoCommand;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Convert Input to CGAL PointCloud
@@ -33,28 +44,27 @@ static class CCommandtavillon_rhino thetavillon_rhinoCommand;
 //typedef Kernel2::Vector_3 Vector2;
 
 void rhinocloud_to_cgalcloud(ON_PointCloud* rhinocloud) {
-	//	CGAL::Point_set_3<Kernel2::Point_3, Kernel2::Vector_3> points;
-	//	points.resize(rhinocloud->m_P.Count());
+	Point_set point_set;
+	point_set.resize(rhinocloud->m_P.Count());
 
 	for (int i = 0; i < rhinocloud->m_P.Count(); i++) {
 		auto& p = rhinocloud->m_P[i];
 
-		//		points.insert(
-//			Kernel2::Point_3(p[3 * i + 0], p[3 * i + 1], p[3 * i + 2]),
-//			Kernel2::Vector_3(n[3 * i + 0], n[3 * i + 1], n[3 * i + 2])
-//		);
+		point_set.insert(Point(p.x, p.y, p.z));
 
-		if (rhinocloud->HasPointColors()) {
-			//new_cloud.m_C.Append(cloudCopy->m_C[i]);
-		}
+		//	if (rhinocloud->HasPointColors()) {
+		//		//new_cloud.m_C.Append(cloudCopy->m_C[i]);
+		//	}
 
-		if (rhinocloud->HasPointNormals()) {
-			//new_cloud.m_N.Append(cloudCopy->m_N[i]);
-		}
+		//	if (rhinocloud->HasPointNormals()) {
+		//		//new_cloud.m_N.Append(cloudCopy->m_N[i]);
+		//	}
 	}
+	//CGAL::draw(point_set);
+	RhinoApp().Print(L"CGAL Pointset: Crop %zi ", point_set.size());
 }
 
-CRhinoCommand::result CCommandtavillon_rhino::RunCommand(const CRhinoCommandContext& context)
+CRhinoCommand::result CCommandtavillon_test::RunCommand(const CRhinoCommandContext& context)
 {
 	///////////////////////////////////////////////////////////////////////////////////
 	  // Get PointCloud/obj from Rhino
@@ -80,7 +90,9 @@ CRhinoCommand::result CCommandtavillon_rhino::RunCommand(const CRhinoCommandCont
 				//Example Get PointCloud plane and duplicate it
 				////////////////////////////////////////////////////////////////
 				const ON_PointCloud* cloud = ON_PointCloud::Cast(cloud_obj->Geometry());
+
 				ON_PointCloud* cloudCopy = cloud->Duplicate();
+				rhinocloud_to_cgalcloud(cloudCopy);
 
 				////////////////////////////////////////////////////////////////
 				//Example Iterate PointCloud
