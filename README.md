@@ -18,7 +18,9 @@
 
 # Dependencies
 
-Easy3d - visualizer`bash commands:
+## Visualizer - Easy3d
+
+bash commands:
 
 ```
 git clone https://github.com/LiangliangNan/Easy3D.git
@@ -27,3 +29,8 @@ cmake -S . -B Release -G "Visual Studio 16 2019" -A x64
 ```
 
 * go to Release folder, open the project and change debug to release, then build, check example files
+* 
+## CGAL, Boost, Eigen - PointCloud load
+
+download library and libraries
+https://github.com/CGAL/cgal/releases/tag/v5.4
