@@ -9,6 +9,8 @@
 - [x] load scans using CGAL .ply reader
 - [x] measure distance between scans, then crop the last scan
 ![image](https://user-images.githubusercontent.com/18013985/166123058-334763e7-9dab-4032-bcfc-f432a179c33b.png)
+![image](https://user-images.githubusercontent.com/18013985/166123160-7ad23d20-4fbd-4da5-b8e1-0b7c52215015.png)
+
 - [ ] cluster pointcloud using cilantro or cgal
 - [ ] take the largest scan and create the bounding-box around it
 - [ ] crop cloud by the bounding-box
