@@ -1,6 +1,6 @@
 
 
-To do list:
+# To do list:
 
 
 - [x] load scans using CGAL .ply reader
