@@ -12,7 +12,7 @@ Visualizer:
 
 # Dependencies
 
-Easy3d - visualizer:
+Easy3d - visualizer`bash commands:
 
 ```
 git clone https://github.com/LiangliangNan/Easy3D.git
