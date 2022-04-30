@@ -2,7 +2,8 @@
 
 # To do list:
 
-
+- [x] scanning using Faro Freestyline
+![image](https://user-images.githubusercontent.com/18013985/166123129-1b49c8a7-bfa0-4def-8dd6-668b05690d81.png)
 - [x] load scans using CGAL .ply reader
 - [x] measure distance between scans, then crop the last scan
 ![image](https://user-images.githubusercontent.com/18013985/166123058-334763e7-9dab-4032-bcfc-f432a179c33b.png)
