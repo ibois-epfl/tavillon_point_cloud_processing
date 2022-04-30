@@ -3,12 +3,18 @@
 To do list:
 
 
-- [ ] task 0
-- [x] task 0
+- [x] load scans using CGAL .ply reader
+- [x] measure distance between scans, then crop the last scan
+- [ ] cluster pointcloud using cilantro or cgal
+- [ ] take the largest scan and create the bounding-box around it
+- [ ] crop cloud by the bounding-box
+- [ ] compute normals
+- [ ] cluster point-cloud by normals and take again the largest
+- [ ] get color point segments and cluster by distance
+- [ ] get convex hull around the found point cloud of the surface
+- [ ] computer center of the shingle to get the robot plane
 
 
-Visualizer:
-- [ ] Rhino C++ Command Line: 1) Select two pointclouds, 2) Convert Rhino PointCloud to CGAL Point-Set 3) Output a pointcloud.
 
 # Dependencies
 
