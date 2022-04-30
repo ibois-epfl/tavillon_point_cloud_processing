@@ -14,10 +14,10 @@ Visualizer:
 
 Easy3d - visualizer:
 
-'''
+```
 git clone https://github.com/LiangliangNan/Easy3D.git
 cd Easy3D
 cmake -S . -B Release -G "Visual Studio 16 2019" -A x64
-'''
+```
 
 * go to Release folder, open the project and change debug to release, then build, check example files
