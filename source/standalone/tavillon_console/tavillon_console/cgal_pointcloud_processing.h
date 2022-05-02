@@ -13,6 +13,7 @@ typedef CGAL::Search_traits_3<K>                      Traits;
 typedef CGAL::Fuzzy_sphere<Traits>                    Fuzzy_circle;
 typedef CGAL::Kd_tree<Traits>                         Tree;
 
+
 inline void cgal_pointcloud_boolean_difference(CGAL::Point_set_3<IK::Point_3>& cgal_cloud_0, CGAL::Point_set_3<IK::Point_3>& cgal_cloud_1, CGAL::Point_set_3<IK::Point_3>& cgal_cloud_result, double radius = 2)
 {
 

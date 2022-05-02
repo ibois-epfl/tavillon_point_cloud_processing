@@ -1,0 +1,3 @@
+﻿  cmdtavillon_test.cpp
+C:\tavillon_point_cloud_processing\tavillon_point_cloud_processing\source\rhino\tavillon2\tavillon2\cmdtavillon_test.cpp(40,9): warning C4189: 'p': local variable is initialized but not referenced
+  tavillon2.vcxproj -> C:\tavillon_point_cloud_processing\tavillon_point_cloud_processing\source\rhino\tavillon2\x64\Debug\tavillon2.rhp

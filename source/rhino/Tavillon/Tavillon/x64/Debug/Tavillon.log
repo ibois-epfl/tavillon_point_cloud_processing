@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+   --- Rhino C++ component links with libs in "C:/Program Files/Rhino 7 SDK/Lib/Release"
+  cmdtavillon_test.cpp
+C:\Users\eskandar\source\repos\tavillon\tavillon\cmdtavillon_test.cpp(2,10): fatal error C1083: Cannot open include file: 'tavillon_rhinoPlugIn.h': No such file or directory
+  cmdTavillon.cpp
+  TavillonApp.cpp
+  TavillonPlugIn.cpp
+  Generating Code...
