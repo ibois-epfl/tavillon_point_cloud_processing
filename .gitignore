@@ -1,4 +1,5 @@
-C:/IBOIS57/_Code/Software/CPP/tavillon_point_cloud_processing/source/rhino/tavillon_rhino/
+/source/rhino/tavillon_rhino/
+/tavillon_pre_experiment/build/
 *.tlog,
 *.ipch
 *.pbd
