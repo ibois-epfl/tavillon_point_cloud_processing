@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\IBOIS57\_Code\Software\CPP\tavillon_point_cloud_processing\source\standalone\tavillon_console\x64\Release\tavillon_console.exe</FullPath>
+      <FullPath>C:\tavillon_point_cloud_processing\tavillon_point_cloud_processing\source\standalone\tavillon_console\x64\Release\tavillon_console.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

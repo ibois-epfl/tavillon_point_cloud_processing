@@ -1,6 +1,5 @@
 /source/rhino/tavillon_rhino/
-/source/standalone/
-/source/
+/tavillon_pre_experiment/build/
 *.tlog,
 *.ipch
 *.pbd
