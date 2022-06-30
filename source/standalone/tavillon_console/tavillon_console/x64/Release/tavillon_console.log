@@ -51,7 +51,6 @@ C:\tavillon_point_cloud_processing\tavillon_point_cloud_processing\source\standa
           [
               T=float
           ]
-C:\tavillon_point_cloud_processing\tavillon_point_cloud_processing\source\standalone\tavillon_console\tavillon_console\tavillon_console.cpp(26,59): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating code
   1 of 3711 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

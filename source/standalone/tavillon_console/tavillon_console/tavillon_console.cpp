@@ -8,8 +8,8 @@
 
 int main()
 {
-	const std::string filename_0 = "C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\point_clouds\\Model6.ply";
-	const std::string filename_1 = "C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\point_clouds\\Model7.ply";
+	const std::string filename_0 = "C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\point_clouds\\Model1.ply";
+	const std::string filename_1 = "C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\point_clouds\\Model2.ply";
 
 	CGAL::Point_set_3<IK::Point_3> point_set_0;
 	auto is_read_0 = CGAL::IO::read_point_set(filename_0, point_set_0);
@@ -23,8 +23,8 @@ int main()
 
 	easy3d::Viewer viewer = viewer_init();
 	viewer_display_point_cloud(viewer, point_set_result, 0, 0, 0, 10);
-	viewer_display_point_cloud(viewer, point_set_1, 1, 0.9, 0);
-	viewer_display_point_cloud(viewer, point_set_0, 1,0,0);
+	//viewer_display_point_cloud(viewer, point_set_1, 1, 0.9, 0);
+	//viewer_display_point_cloud(viewer, point_set_0, 1,0,0);
 	
 	
 	viewer_run(viewer);
