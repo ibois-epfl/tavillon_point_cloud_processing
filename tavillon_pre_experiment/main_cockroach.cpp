@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 
 	// downsample
 	std::cout << cloud_op3_one->points_.size() << std::endl;
-	PC_o3d_ptr cloud_op3_one_ = Cockroach::voxelDownSampling(cloud_op3_one, 0.005*0.1);
+	PC_o3d_ptr cloud_op3_one_ = Cockroach::voxelDownSampling(cloud_op3_one, 0.003);
 	std::cout << cloud_op3_one_->points_.size() << std::endl;
 
 	//Compute normals
@@ -78,8 +78,8 @@ int main(int argc, char* argv[])
 	Cockroach::convert_Open3DToCilantroCloud(cloud_op3_one_, cloud_cli);
 
 	//Cluster pointclouds
-	auto result = Cockroach::cluster_connectedComponentKSearch(cloud_cli, 10, 2.0, 100, true);
-
+	auto result = Cockroach::cluster_connectedComponentKSearch(cloud_cli, 30, 2.0, 100, true);
+	
 	// Convert Cilantro>>Open3d
 	std::vector<std::shared_ptr<PC>> open3d_clouds_d;
 	Cockroach::convert_CilantroToOpen3DCloud_multiple(result, open3d_clouds_d);
@@ -109,7 +109,8 @@ int main(int argc, char* argv[])
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //VISUALIZE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	std::vector<PC_o3d_ptr> clouds{ cloud_op3_one,open3d_clouds_d[0] };
-	Cockroach::visualize_standard(clouds);
+	//std::vector<PC_o3d_ptr> clouds{ cloud_op3_one,open3d_clouds_d[0] };
+	
+	Cockroach::visualize_standard(open3d_clouds_d[0]);
 	return EXIT_SUCCESS;
 }
