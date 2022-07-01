@@ -12,6 +12,7 @@
 ![image](https://user-images.githubusercontent.com/18013985/166123160-7ad23d20-4fbd-4da5-b8e1-0b7c52215015.png)
 
 - [x] cluster pointcloud using cilantro or cgal
+![image][Shingle_clustering](https://user-images.githubusercontent.com/98747079/176932444-6b806dc0-3379-4c45-9f29-d8264f7efa3b.JPG)
 - [x] take the largest scan and create the bounding-box around it
 - [ ] crop cloud by the bounding-box
 - [ ] compute normals
