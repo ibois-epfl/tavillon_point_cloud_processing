@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Open cloud
 	PC_o3d_ptr cloud_op3_one(new PC_o3d);
-	cloud_op3_one = Cockroach::importCloud("C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\tavillon_pre_experiment\\build\\Release\\full_cloud.ply");
+	cloud_op3_one = Cockroach::importCloud("C:\\tavillon_point_cloud_processing\\tavillon_point_cloud_processing\\tavillon_pre_experiment\\build\\Release\\tavillon10.ply");
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// PLANE TO PLANE TRANSFORMATION
@@ -25,10 +25,12 @@ int main(int argc, char* argv[])
 	Cockroach::orient_pointcloud(
 		cloud_op3_one,
 		//Source plane
-		Eigen::Vector3d(0.331132, 0.53185, 1.527349),
-		Eigen::Vector3d(-0.958138, -0.284093, 0.035537),
-		Eigen::Vector3d(-0.249201, 0.766401, -0.592054),
-		Eigen::Vector3d(0.140963, -0.576125, -0.805114),
+		Eigen::Vector3d(-15.932689, 1.450952, 0.566604),
+		Eigen::Vector3d(0.928573, -0.288704, -0.233243),
+		Eigen::Vector3d(0.371139, 0.72719, 0.577452),
+		Eigen::Vector3d(0.0029, -0.622772, 0.782398),
+
+
 		//Target Plane
 		Eigen::Vector3d(0, 0, 0),
 		Eigen::Vector3d(1, 0, 0),
@@ -67,7 +69,7 @@ int main(int argc, char* argv[])
 
 	// downsample
 	std::cout << cloud_op3_one->points_.size() << std::endl;
-	PC_o3d_ptr cloud_op3_one_ = Cockroach::voxelDownSampling(cloud_op3_one, 0.003);
+	PC_o3d_ptr cloud_op3_one_ = Cockroach::voxelDownSampling(cloud_op3_one, 0.001);
 	std::cout << cloud_op3_one_->points_.size() << std::endl;
 
 	//Compute normals
