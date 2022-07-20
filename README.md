@@ -2,7 +2,7 @@
 
 # To do list:
 
-- [x] scanning using Faro Freestyline
+- [x] scanning using Faro Freestyle
 ![image](https://user-images.githubusercontent.com/18013985/166123148-9071040b-667c-4b38-ba7e-70d32c51a4c1.png)
 ![image](https://user-images.githubusercontent.com/98747079/179919112-f8dcb7e8-50f4-4db2-bd19-f6e26acca673.JPG)
 
