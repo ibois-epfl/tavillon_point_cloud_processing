@@ -3,8 +3,8 @@
 # To do list:
 
 - [x] scanning using Faro Freestyline
-![image](https://user-images.githubusercontent.com/18013985/166123129-1b49c8a7-bfa0-4def-8dd6-668b05690d81.png)
 ![image](https://user-images.githubusercontent.com/18013985/166123148-9071040b-667c-4b38-ba7e-70d32c51a4c1.png)
+![image](https://user-images.githubusercontent.com/98747079/179919112-f8dcb7e8-50f4-4db2-bd19-f6e26acca673.JPG)
 
 - [x] Scanning Using FARO Focus
 ![image](https://user-images.githubusercontent.com/98747079/179916599-ef9f1d3f-6914-4a02-ad02-e80fb4870d35.jpg)
