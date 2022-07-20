@@ -19,11 +19,8 @@
 -[x] Downsampling / Estimating normals/ Clustering based on connectedComponentKSearch / Selecting the last shingle
 ![image](https://user-images.githubusercontent.com/98747079/179918795-4ba43dec-7d6d-4ae8-9d3c-dc13c627036d.JPG)
 
-
-
-- [] measure distance between scans, then crop the last scan
-![image](https://user-images.githubusercontent.com/18013985/166123058-334763e7-9dab-4032-bcfc-f432a179c33b.png)
-![image](https://user-images.githubusercontent.com/18013985/166123160-7ad23d20-4fbd-4da5-b8e1-0b7c52215015.png)
+-[x] Results
+![image](https://user-images.githubusercontent.com/98747079/179920450-ddeff25a-97af-42c0-9529-ae08548d7023.gif)
 
 
 
